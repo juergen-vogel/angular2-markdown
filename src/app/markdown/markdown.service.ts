@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/Rx';
-import 'rxjs/add/operator/toPromise';
+import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class MarkdownService {
 
   constructor(private http: Http) { }
-  getContent(path: string) {
-    return this.http.get(path).toPromise();
+
+  getContent(path: string):Observable<any> {
+    return this.http.get(path);
   }
 }

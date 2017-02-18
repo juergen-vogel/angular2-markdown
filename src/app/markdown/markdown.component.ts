@@ -36,8 +36,8 @@ export class MarkdownComponent implements OnInit, AfterViewInit {
     ) { }
 
     ngOnInit() {
-        console.log(this.path);
-        console.log('The component is initialized');
+        // console.log(this.path);
+        // console.log('The component is initialized');
     }
 
     /**
@@ -69,12 +69,12 @@ export class MarkdownComponent implements OnInit, AfterViewInit {
         }
 
         this.mdService.getContent(this.path)
-            .then(resp => {
+            .subscribe(resp => {
                 this.md = this.ext !== 'md' ? '```' + this.ext + '\n' + resp.text() + '\n```' : resp.text();
                 this.el.nativeElement.innerHTML = marked(this.prepare(this.md));
                 Prism.highlightAll(false);
-            })
-            .catch(this.handleError);
+            },
+            err => this.handleError);
     }
 
     /**
