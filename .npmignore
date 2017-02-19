@@ -7,3 +7,14 @@ Thumbs.db
 # Ignored files
 *.ts
 !*.d.ts
+
+coverage
+e2e
+src
+.angular-cli.json
+.editorconfig
+index.ts
+karma.config.js
+protractor.conf.js
+rollup.config.js
+tslint.json

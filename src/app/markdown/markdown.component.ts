@@ -25,7 +25,7 @@ import 'prismjs/components/prism-diff';
 })
 export class MarkdownComponent implements OnInit, AfterViewInit {
     @Input() path: string;
-
+    
     private md: any;
     private ext: string;
 

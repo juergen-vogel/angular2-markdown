@@ -6,7 +6,6 @@
   "angular-cli": {},
   "main": "bundles/angular2-markdown.umd.js",
   "module": "bundles/index.js",
-  "name": "angular2-markdown",
   "typings": "index.d.ts",
   "scripts": {
     "ng": "ng",
@@ -14,8 +13,10 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "prepublish":"./node_modules/.bin/tsc index.ts --outDir bundles -d --experimentalDecorators",
-    "publish": "./node_modules/.bin/rollup -c"
+    "prepublish": "./node_modules/.bin/tsc index.ts --outDir bundles -d --experimentalDecorators --emitDecoratorMetadata",
+    "publish": "./node_modules/.bin/rollup -c",
+    "pregh-pages": "ng build",
+    "gh-pages": "gh-pages -d dist"
   },
   "private": false,
   "dependencies": {
@@ -42,7 +43,9 @@
     "@angular/compiler-cli": "^2.4.0",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
+    "angular-cli-github-pages": "^0.2.0",
     "codelyzer": "~2.0.0-beta.4",
+    "gh-pages": "^0.12.0",
     "jasmine-core": "~2.5.2",
     "jasmine-spec-reporter": "~3.2.0",
     "karma": "~1.4.1",
@@ -52,6 +55,9 @@
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.1.0",
+    "rollup-plugin-commonjs": "^7.0.0",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-uglify": "^1.0.1",
     "ts-node": "~2.0.0",
     "tslint": "~4.4.2",
     "typescript": "~2.0.0"
