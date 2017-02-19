@@ -64,7 +64,7 @@ describe('MarkdownService', () => {
     mockBackend = TestBed.get(MockBackend);
   });
 
-  describe('getSource', () => {
+  describe('getContent', () => {
 
     it('should call http service to get src content', () => {
 
@@ -72,7 +72,7 @@ describe('MarkdownService', () => {
 
       const mockSrc = 'src-x';
 
-      mthService.getSource(mockSrc);
+      mthService.getContent(mockSrc);
 
       expect(http.get).toHaveBeenCalledWith(mockSrc);
     });
@@ -83,7 +83,7 @@ describe('MarkdownService', () => {
 
       const response = mockBackendResponse(<ResponseOptions>{ body: 'response-text-x' });
 
-      const observable = mthService.getSource('src-x');
+      const observable = mthService.getContent('src-x');
 
       observable.subscribe(responseData => {
         expect(mthService.extractData).toHaveBeenCalledWith(response, jasmine.any(Number));
@@ -96,7 +96,7 @@ describe('MarkdownService', () => {
 
       const error = mockBackendError('error-x');
 
-      const observable = mthService.getSource('src-x');
+      const observable = mthService.getContent('src-x');
 
       observable.subscribe(null, responseError => {
         expect(mthService.handleError).toHaveBeenCalledWith(error, jasmine.any(AnonymousSubject));

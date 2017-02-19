@@ -10,13 +10,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
-require('rxjs/Rx');
+var Observable_1 = require('rxjs/Observable');
+require('rxjs/add/observable/throw');
+require('rxjs/add/operator/catch');
+require('rxjs/add/operator/map');
 var MarkdownService = (function () {
     function MarkdownService(http) {
         this.http = http;
     }
     MarkdownService.prototype.getContent = function (path) {
-        return this.http.get(path);
+        return this.http.get(path)
+            .map(this.extractData)
+            .catch(this.handleError);
+    };
+    MarkdownService.prototype.extractData = function (response) {
+        return response.text() || '';
+    };
+    MarkdownService.prototype.handleError = function (error) {
+        var errMsg;
+        if (error instanceof http_1.Response) {
+            var body = error.json() || '';
+            var err = body.error || JSON.stringify(body);
+            errMsg = error.status + " - " + (error.statusText || '') + " " + err;
+        }
+        else {
+            errMsg = error.message ? error.message : error.toString();
+        }
+        console.error(errMsg);
+        return Observable_1.Observable.throw(errMsg);
     };
     MarkdownService = __decorate([
         core_1.Injectable(), 

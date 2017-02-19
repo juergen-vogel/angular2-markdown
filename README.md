@@ -1,7 +1,10 @@
 # Angular 2 Markdown
-Source @ [https://github.com/dimpu/angular2-markdown]()
 
  [![CircleCI](https://circleci.com/gh/dimpu/angular2-markdown/tree/master.svg?style=shield&)](https://circleci.com/gh/dimpu/angular2-markdown/master) [![version](https://img.shields.io/npm/v/angular2-markdown.svg?style=flat)](https://www.npmjs.com/package/angular2-markdown) [![npm](https://img.shields.io/npm/l/angular2-markdown.svg)](https://opensource.org/licenses/MIT)
+
+ Source @ [https://github.com/dimpu/angular2-markdown]()
+
+ Demo @ [https://dimpu.github.io/angular2-markdown/]()
 
 
 ## Setup
