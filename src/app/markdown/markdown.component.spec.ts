@@ -36,27 +36,5 @@ describe('MarkdownComponent', () => {
     nativeElement = fixture.nativeElement;
     fixture.detectChanges();
   });
-
-  describe('ngAfterViewInit', () => {
-
-
-  });
-
-  describe('ngOnChanges', () => {
-
-
-
-  });
-
-  describe('handlePath', () => {
-
-
-
-  });
-
-
-
-  describe('prepare', () => {
-
-  });
+  
 });
