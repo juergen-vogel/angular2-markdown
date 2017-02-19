@@ -8,13 +8,48 @@ Thumbs.db
 *.ts
 !*.d.ts
 
-coverage
-e2e
-src
-.angular-cli.json
-.editorconfig
-index.ts
-karma.config.js
-protractor.conf.js
-rollup.config.js
-tslint.json
+
+
+# compiled output
+/dist
+/tmp
+
+# dependencies
+/node_modules
+/bower_components
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+*.launch
+.settings/
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage/*
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/typings
+
+# e2e
+/e2e/*.js
+/e2e/*.map
+.vscode
+#System Files
+.DS_Store
+Thumbs.db
+
+
+
+/coverage
+/e2e
+/src
+/.angular-cli.json
+/.editorconfig
+/karma.config.js
+/protractor.conf.js
+/rollup.config.js
+/tslint.json

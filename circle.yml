@@ -31,5 +31,3 @@ test:
     - mkdir $CIRCLE_TEST_REPORTS/lint
   override:
     - yarn test -- --single-run
-  post:
-    - mv test-results.xml $CIRCLE_TEST_REPORTS/karma
