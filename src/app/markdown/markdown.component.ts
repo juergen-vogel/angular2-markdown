@@ -2,7 +2,6 @@ import { Component, ElementRef, OnInit, AfterViewInit, Input } from '@angular/co
 import { Http } from '@angular/http';
 import * as  marked from 'marked';
 import { MarkdownService } from './markdown.service';
-
 import 'prismjs/prism';
 import 'prismjs/components/prism-c';
 import 'prismjs/components/prism-java';
@@ -13,6 +12,17 @@ import 'prismjs/components/prism-php';
 import 'prismjs/components/prism-scss';
 import 'prismjs/components/prism-diff';
 
+
+marked.setOptions({
+  renderer: new marked.Renderer(),
+  gfm: true,
+  tables: true,
+  breaks: false,
+  pedantic: false,
+  sanitize: false,
+  smartLists: true,
+  smartypants: false
+});
 
 @Component({
     selector: 'markdown,[Markdown]',
@@ -25,7 +35,7 @@ import 'prismjs/components/prism-diff';
 })
 export class MarkdownComponent implements OnInit, AfterViewInit {
     @Input() path: string;
-    
+
     private md: any;
     private ext: string;
 
