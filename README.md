@@ -1,6 +1,10 @@
 # Angular 2 Markdown
 
- [![CircleCI](https://circleci.com/gh/dimpu/angular2-markdown/tree/master.svg?style=shield&)](https://circleci.com/gh/dimpu/angular2-markdown/master) [![version](https://img.shields.io/npm/v/angular2-markdown.svg?style=flat)](https://www.npmjs.com/package/angular2-markdown) [![npm](https://img.shields.io/npm/l/angular2-markdown.svg)](https://opensource.org/licenses/MIT)
+[![Build Status][travis-badge]][travis-badge-url]
+[![npm][circleci-badge-url]][circleci-url]
+[![version][npm-badge-url]][npm-url]
+[![npm][license-badge-url]][license-url]
+
 
  Source @ [https://github.com/dimpu/angular2-markdown]()
 
@@ -67,3 +71,15 @@ npm i
 ng serve
 ```
 now you should see working example at [http://localhost:4200]()
+
+
+
+
+[travis-badge]: https://travis-ci.org/dimpu/angular2-markdown.svg?branch=master
+[travis-badge-url]: https://travis-ci.org/dimpu/angular2-markdown
+[license-url]: https://opensource.org/licenses/MIT
+[license-badge-url]: https://img.shields.io/npm/l/angular2-markdown.svg
+[npm-url]: https://www.npmjs.com/package/angular2-markdown
+[npm-badge-url]: https://img.shields.io/npm/v/angular2-markdown.svg?style=flat
+[circleci-url]: https://circleci.com/gh/dimpu/angular2-markdown/master
+[circleci-badge-url]: https://circleci.com/gh/dimpu/angular2-markdown/tree/master.svg?style=shield&
