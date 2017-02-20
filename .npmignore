@@ -47,6 +47,7 @@ Thumbs.db
 /coverage
 /e2e
 /src
+!/bundles/src
 /.angular-cli.json
 /.editorconfig
 /karma.config.js
