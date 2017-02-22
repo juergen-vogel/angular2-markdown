@@ -28,7 +28,7 @@ import { AppComponent } from '../src/app.component';
 @NgModule({
   imports: [
     BrowserModule,
-    MarkdownModule.forRoot(),
+    MarkdownModule,
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],

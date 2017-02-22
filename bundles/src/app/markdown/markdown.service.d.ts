@@ -8,6 +8,6 @@ export declare class MarkdownService {
     private http;
     constructor(http: Http);
     getContent(path: string): Observable<any>;
-    extractData(response: Response): string;
+    extractData(res: Response): string;
     handleError(error: Response | any): ErrorObservable<string>;
 }

@@ -13,6 +13,7 @@ import 'prismjs/components/prism-scss';
 import 'prismjs/components/prism-diff';
 
 
+
 marked.setOptions({
   renderer: new marked.Renderer(),
   gfm: true,
@@ -46,8 +47,7 @@ export class MarkdownComponent implements OnInit, AfterViewInit {
     ) { }
 
     ngOnInit() {
-        // console.log(this.path);
-        // console.log('The component is initialized');
+
     }
 
     /**
@@ -79,8 +79,8 @@ export class MarkdownComponent implements OnInit, AfterViewInit {
         }
 
         this.mdService.getContent(this.path)
-            .subscribe(resp => {
-                this.md = this.ext !== 'md' ? '```' + this.ext + '\n' + resp.text() + '\n```' : resp.text();
+            .subscribe(data => {
+                this.md = this.ext !== 'md' ? '```' + this.ext + '\n' + data + '\n```' : data;
                 this.el.nativeElement.innerHTML = marked(this.prepare(this.md));
                 Prism.highlightAll(false);
             },

@@ -19,8 +19,8 @@ export class MarkdownService {
        .catch(this.handleError);
    }
 
-   extractData(response: Response): string {
-     return response.text() || '';
+   extractData(res: Response): string {
+     return res.text() || '';
    }
 
    handleError(error: Response | any): ErrorObservable<string> {

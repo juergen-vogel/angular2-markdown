@@ -1,6 +1,3 @@
-import nodeResolve from 'rollup-plugin-node-resolve'
-import commonjs    from 'rollup-plugin-commonjs';
-import uglify      from 'rollup-plugin-uglify'
 
 export default {
   entry: 'bundles/index.js',
@@ -12,17 +9,7 @@ export default {
    }
   ],
   sourceMap: false,
-  plugins: [
-    nodeResolve({
-      jsnext: true,
-      module: true
-    }),
-    commonjs({
-       include: 'node_modules/**',
-       include: 'node_modules/marked/**'
-    }),
-    uglify()
-  ],
+
 
   onwarn: function(warning) {
     // Skip certain warnings
@@ -36,10 +23,12 @@ export default {
 
   globals: {
     '@angular/core': 'ng.core',
-    '@angular/compiler': 'ng.compiler',
-    '@angular/platform-browser': 'ng.platformBrowser',
     'rxjs/Observable': 'Rx',
-    'rxjs/Subject': 'Rx'
+    'rxjs/ReplaySubject': 'Rx',
+    'rxjs/add/operator/map': 'Rx.Observable.prototype',
+    'rxjs/add/operator/mergeMap': 'Rx.Observable.prototype',
+    'rxjs/add/observable/fromEvent': 'Rx.Observable',
+    'rxjs/add/observable/of': 'Rx.Observable'
   }
 
 };

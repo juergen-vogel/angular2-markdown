@@ -38,8 +38,6 @@ var MarkdownComponent = (function () {
         this.http = http;
     }
     MarkdownComponent.prototype.ngOnInit = function () {
-        // console.log(this.path);
-        // console.log('The component is initialized');
     };
     /**
      * on path input change
@@ -69,8 +67,8 @@ var MarkdownComponent = (function () {
             this.ext = this.path.split('.').splice(-1).join();
         }
         this.mdService.getContent(this.path)
-            .subscribe(function (resp) {
-            _this.md = _this.ext !== 'md' ? '```' + _this.ext + '\n' + resp.text() + '\n```' : resp.text();
+            .subscribe(function (data) {
+            _this.md = _this.ext !== 'md' ? '```' + _this.ext + '\n' + data + '\n```' : data;
             _this.el.nativeElement.innerHTML = marked(_this.prepare(_this.md));
             Prism.highlightAll(false);
         }, function (err) { return _this.handleError; });

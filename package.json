@@ -1,6 +1,6 @@
 {
   "name": "angular2-markdown",
-  "version": "1.3.9",
+  "version": "1.3.15",
   "description": "A simple markdown module for Angular 2",
   "license": "MIT",
   "angular-cli": {},
@@ -14,10 +14,15 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "prepublish": "./node_modules/.bin/tsc index.ts --outDir bundles -d --experimentalDecorators --emitDecoratorMetadata",
-    "publish": "./node_modules/.bin/rollup -c",
+    "typedoc": "typedoc --exclude '**/*.spec.ts' ./src/",
+    "minify": "uglifyjs ./bundles/markdown.umd.js --screw-ie8 --compress --mangle --comments --output ./bundles/markdown.umd.min.js",
+    "compile": "./node_modules/.bin/tsc index.ts --outDir bundles -d --experimentalDecorators --emitDecoratorMetadata --moduleResolution node",
+    "rollup": "./node_modules/.bin/rollup -c",
+    "prepublish": "",
+    "publish": "npm run compile & npm run rollup",
     "pregh-pages": "ng build -bh angular2-markdown",
-    "gh-pages": "gh-pages -d dist"
+    "gh-pages": "gh-pages -d dist",
+    "build": "ngm build -p src/app/markdown --clean"
   },
   "private": false,
   "dependencies": {
@@ -26,11 +31,14 @@
   },
   "peerDependencies": {
     "@angular/core": ">=2.0.0",
-    "@angular/http": ">2.0.0"
+    "@angular/http": ">2.0.0",
+    "rxjs": ">5.1.0"
   },
   "devDependencies": {
+    "@angular/cli": "^1.0.0-beta.32.3",
     "@angular/common": "^2.4.0",
-    "@angular/compiler": "^2.4.0",
+    "@angular/compiler": "^2.4.8",
+    "@angular/compiler-cli": "^2.4.8",
     "@angular/core": "^2.4.0",
     "@angular/forms": "^2.4.0",
     "@angular/http": "^2.4.0",
@@ -38,19 +46,14 @@
     "@angular/platform-browser-dynamic": "^2.4.0",
     "@angular/router": "^3.4.0",
     "@types/core-js": "^0.9.35",
-    "@types/marked": "0.0.28",
-    "@types/prismjs": "^1.4.18",
-    "core-js": "^2.4.1",
-    "rxjs": "^5.1.0",
-    "ts-helpers": "^1.1.1",
-    "zone.js": "^0.7.6",
-    "@angular/cli": "1.0.0-beta.32.3",
-    "@angular/compiler": "^2.4.8",
-    "@angular/compiler-cli": "^2.4.8",
     "@types/jasmine": "2.5.38",
+    "@types/marked": "0.0.28",
     "@types/node": "~6.0.60",
+    "@types/prismjs": "^1.4.18",
+    "angular-cli": "^1.0.0-beta.28.3",
     "angular-cli-github-pages": "^0.2.0",
     "codelyzer": "~2.0.0-beta.4",
+    "core-js": "^2.4.1",
     "gh-pages": "^0.12.0",
     "jasmine-core": "~2.5.2",
     "jasmine-spec-reporter": "~3.2.0",
@@ -60,23 +63,25 @@
     "karma-coverage-istanbul-reporter": "^0.2.0",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "ngm-cli": "^0.4.4",
     "protractor": "~5.1.0",
-    "rollup-plugin-commonjs": "^7.0.0",
-    "rollup-plugin-node-resolve": "^2.0.0",
-    "rollup-plugin-uglify": "^1.0.1",
+    "rollup": "^0.41.4",
+    "ts-helpers": "^1.1.1",
     "ts-node": "~2.0.0",
     "tslint": "~4.4.2",
-    "typescript": "~2.0.0"
+    "typescript": "^2.0.10",
+    "uglify-js": "^2.7.5",
+    "zone.js": "^0.7.6"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/dimpu/angular2-markdown.git"
   },
   "bugs": {
-   "url": "https://github.com/dimpu/angular2-markdown/issues"
- },
- "homepage": "https://github.com/dimpu/angular2-markdown#readme",
- "keywords": [
+    "url": "https://github.com/dimpu/angular2-markdown/issues"
+  },
+  "homepage": "https://github.com/dimpu/angular2-markdown#readme",
+  "keywords": [
     "angular2",
     "angular",
     "typescrpt",

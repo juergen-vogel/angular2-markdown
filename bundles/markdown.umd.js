@@ -1,1 +1,13 @@
-!function(e,n){"object"==typeof exports&&"undefined"!=typeof module?n():"function"==typeof define&&define.amd?define(n):n()}(this,function(){"use strict";function e(e){for(var n in e)exports.hasOwnProperty(n)||(exports[n]=e[n])}e(require("./src/app/markdown/markdown.module")),e(require("./src/app/markdown/markdown.component"))});
+(function (global, factory) {
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory() :
+	typeof define === 'function' && define.amd ? define(factory) :
+	(factory());
+}(this, (function () { 'use strict';
+
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+__export(require('./src/app/markdown/markdown.module'));
+__export(require('./src/app/markdown/markdown.component'));
+
+})));

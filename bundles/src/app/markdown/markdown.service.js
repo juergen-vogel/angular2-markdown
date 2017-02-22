@@ -23,8 +23,8 @@ var MarkdownService = (function () {
             .map(this.extractData)
             .catch(this.handleError);
     };
-    MarkdownService.prototype.extractData = function (response) {
-        return response.text() || '';
+    MarkdownService.prototype.extractData = function (res) {
+        return res.text() || '';
     };
     MarkdownService.prototype.handleError = function (error) {
         var errMsg;

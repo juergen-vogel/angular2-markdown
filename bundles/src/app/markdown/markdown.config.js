@@ -9,21 +9,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
-var markdown_component_1 = require('./markdown.component');
-var markdown_service_1 = require('./markdown.service');
-var MarkdownModule = (function () {
-    function MarkdownModule() {
+var MarkdonwConfig = (function () {
+    function MarkdonwConfig() {
     }
-    MarkdownModule = __decorate([
-        core_1.NgModule({
-            exports: [markdown_component_1.MarkdownComponent],
-            imports: [http_1.HttpModule],
-            declarations: [markdown_component_1.MarkdownComponent],
-            providers: [markdown_service_1.MarkdownService]
-        }), 
+    MarkdonwConfig = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], MarkdownModule);
-    return MarkdownModule;
+    ], MarkdonwConfig);
+    return MarkdonwConfig;
 }());
-exports.MarkdownModule = MarkdownModule;
+exports.MarkdonwConfig = MarkdonwConfig;

@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "module": "system",
+    "moduleResolution": "node", 
+    "noImplicitAny": false,
+    "outDir": "./bundles"
+  },
+  "lib": [
+      "es2015",
+      "dom"
+    ],
+  "files": [
+    "./src/app/index.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ],
+  "paths": {
+      "@angular/core": ["node_modules/@angular/core"],
+      "rxjs/*": ["node_modules/rxjs/*"]
+  },
+  "angularCompilerOptions": {
+    "skipTemplateCodegen": true
+  }
+}
